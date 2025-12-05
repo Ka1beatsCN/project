@@ -37,11 +37,12 @@ Function.prototype.myBind = function(tar, ...args) {
   if(tar !== null && tar !== undefined) { tar = Object(tar) }
 
   const func = this
-  return function(...newArgs) {
+  return function newf(...newArgs) {
     if(new.target) {
-      return new func(...[...args1, ...args2])
+        newf.prototype = func.prototype
+        return new func(...[...args, ...newArgs])
     }
-    return currentFunc.apply(context, [...args1, ...args2])
+    return currentFunc.apply(context, [...args, ...newArgs])
   }
 }
 
