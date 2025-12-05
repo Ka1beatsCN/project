@@ -1,3 +1,4 @@
+'use strict';
 // apply
 Function.prototype.myApply = function(tar, args = []) {
   // number boolean string symbol
@@ -6,8 +7,8 @@ Function.prototype.myApply = function(tar, args = []) {
     throw new TypeError('CreateListFromArrayLike called on non-object')
   }
   const sbl = Symbol()
-  
-  tar = Object(tar)
+
+  if(tar !== null && tar !== undefined) { tar = Object(tar) }
   tar[sbl] = this
   args = Array.isArray(args) ? args : []
   const res = tar[sbl](...args)
@@ -20,7 +21,7 @@ Function.prototype.myApply = function(tar, args = []) {
 Function.prototype.myCall = function(tar, ...args) {
   const sbl = Symbol()
 
-  tar = Object(tar)
+  if(tar !== null && tar !== undefined) { tar = Object(tar) }
   tar[sbl] = this
   const res = tar[sbl](...args)
   
