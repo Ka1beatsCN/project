@@ -30,7 +30,20 @@ Function.prototype.myCall = function(tar, ...args) {
 }
 
 // bind
+Function.prototype.myBind = function(tar, ...args) {
+  if(typeof this !== 'function') {
+    throw Error('error')
+  }
+  if(tar !== null && tar !== undefined) { tar = Object(tar) }
 
+  const func = this
+  return function(...newArgs) {
+    if(new.target) {
+      return new func(...[...args1, ...args2])
+    }
+    return currentFunc.apply(context, [...args1, ...args2])
+  }
+}
 
 // new
 
