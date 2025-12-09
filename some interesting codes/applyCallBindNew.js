@@ -47,5 +47,10 @@ Function.prototype.myBind = function(tar, ...args) {
 }
 
 // new
+function myNew(func, ...args) {
+  const obj = Object.create(func.prototype)
+  const ans = func.call(obj, ...args)
 
+  return ans instanceof Object ? ans : obj
+}
 
