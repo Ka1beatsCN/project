@@ -1,0 +1,181 @@
+网络
+http请求类型
+网站性能优化
+http状态码
+为什么要用多个域名存储网站资源
+req结构
+res结构
+websocket
+网络安全xss，csrf，X-FRAME-OPTIONS
+http1 1.1 2.0
+https
+udp ftp ssh
+三次握手四次挥手
+你点外卖（HTTP），平台用电话确认地址（TCP），骑手送餐（IP）。要是赶时间，骑手可能骑摩托（UDP），不承诺送到但更快。
+AQR
+get post区别
+
+浏览器
+输入url到页面渲染的过程+渲染机制
+对浏览器内核的理解及常见浏览器内核
+离线存储
+cookie ss ls indexdb
+渲染优化
+渐进增强与优雅降级
+js在哪些地方可能存在缓存
+会话跟踪的方法
+同源策略、跨域
+兼容性问题
+window.onLoad
+缓存
+单线程与eventloop（nodejs eventloop）
+webworker多线程
+内存泄漏
+timeout最小间隔与误差
+重绘和回流
+token session jwt
+service worker
+阻塞渲染场景
+跨标签通信
+
+css
+css sprite
+display:none/visible:hidden
+link和@import
+FOUC
+BFC
+display float position
+浮动与清除浮动
+为什么要初始化css
+css3新特性
+伪类与伪元素
+display的值
+盒模型
+样式优先级
+GIF PNG JPEG
+css合并
+css3动画
+base64
+postCSS
+rgba和opacity
+css硬件加速（GPU渲染）
+offsetHW scrollHW clientHW
+0.5px
+层叠上下文
+
+js
+闭包
+作用域与作用域链 执行上下文
+原型链
+事件代理（委托）
+继承
+this
+事件冒泡与捕获（阻止方法）
+new手写
+ajax
+跨域
+模块化
+异步加载
+axios与fetch
+xml与json
+设计模式
+promise
+内存泄漏
+数据类型+es6（基本类型、引用类型）类型转换
+怎么判断类型（typeof instanceof）
+eval
+null与undefined
+use strict
+js判断数组
+let const var
+Array的内置方法
+异步编程实现
+js动画与css动画
+DOM操作
+常见全局方法，全局对象
+变量提升
+自定义事件
+手写bind call apply
+箭头函数
+async、await优缺点，手写
+generator原理，手写
+Proxy
+
+工程化
+webpack vite esbuild Rollup
+CMD AMD es6 commonjs
+webpack打包体积优化
+webpack效率优化
+webpack loader与plugin
+
+VUE
+双向绑定
+生命周期
+参数传递组件通信
+vue-router
+vuex与pinia
+v-if v-show
+$route与$router
+scoped
+keep-alive
+v-el
+slots
+nexttick
+data为什么是函数
+源码computed，watch，watchEffect，ref，reactive，effect，track
+diff
+proxy，defineproperty
+
+REACT
+keys
+setState
+refs
+生命周期
+redux
+虚拟DOM优缺点
+diff
+性能优化
+flux
+组件通信
+fiber
+
+场景
+渲染十万条数据不卡顿（requestAnimationFrame）
+数组去重
+深拷贝
+防抖节流
+数组扁平化
+
+其它
+面向对象与面向过程
+函数式编程
+正则表达式，反向引用，断言
+性能优化
+负载均衡
+CDN
+BABEL
+埋点，监控
+图片优化
+dns-prefetch
+preload
+prerender
+vue&react
+
+开放题
+重构的理解
+优秀的代码是什么样的
+对前端的理解，以及未来的看法
+前端价值
+如何管理团队
+如何管理项目
+封装组件
+自我介绍
+有什么问题问面试官
+优缺点
+职业规划
+薪资要求
+项目亮点
+
+
+
+
