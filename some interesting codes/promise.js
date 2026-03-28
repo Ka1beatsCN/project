@@ -78,14 +78,44 @@ function resolvePromise(promise2, x, resolve, reject) {
   if(promise2 === x) {
     return reject(new TypeError('...'))
   }
-  if(x && x.then) {
+  if (x instanceof myPromise) {
+    x.then(y => {
+        resolvePromise(promise2, y, resolve, reject)
+    }, reject);
+  } else if (x !== null && ((typeof x === 'object' || (typeof x === 'function')))) {
     try {
-      x.then(y => resolvePromise(promise2, y, resolve, reject))
-    } catch(err) {
-      reject(err)
+      var then = x.then;
+    } catch (e) {
+      return reject(e);
+    }
+
+    if (typeof then === 'function') {
+      let called = false;
+      try {
+        then.call(
+          x,
+          y => {
+            if (called) return;
+            called = true;
+            resolvePromise(promise2, y, resolve, reject);
+          },
+          r => {
+            if (called) return;
+            called = true;
+            reject(r);
+          }
+        )
+      } catch (e) {
+        if (called) return;
+        called = true;
+
+        reject(e);
+      }
+    } else {
+        resolve(x);
     }
   } else {
-    resolve(x)
+      return resolve(x);
   }
 }
 
