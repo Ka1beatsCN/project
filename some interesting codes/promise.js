@@ -78,7 +78,7 @@ function resolvePromise(promise2, x, resolve, reject) {
   if(promise2 === x) {
     return reject(new TypeError('...'))
   }
-  if (x instanceof myPromise) {
+  if (x instanceof MyPromise) {
     x.then(y => {
         resolvePromise(promise2, y, resolve, reject)
     }, reject);
