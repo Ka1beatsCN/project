@@ -34,6 +34,22 @@ function genAsync(genf) {
   }
   
   const gen = genAsync(test)
-  gen().then(...)
+  gen()
 */
+
+function(gen) {
+  const it = gen();
+  function step(val) {
+    const res = it.next(val);
+    
+    if(res.done) return Promise.resolve(res.value);
+    
+    return Promise.resolve(res.value).then(v = step(v)).catch(err => {
+      it.throw(err);
+      step()
+    });
+  }
+  return step()
+}
+
   
